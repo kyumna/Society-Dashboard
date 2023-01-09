@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/iconn.ico" />
+    <link rel="stylesheet" href="/static/updateprofile.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/luxonauta/luxa@8a98/dist/compressed/luxa.css">
+    <title>Dashboard - Update Profile</title>
+</head>
+<body>
+    <main class="has-dflex-center">
+        <section>
+          <div class="lx-container-">
+            <div class="lx-row">
+              <h1 class="title">Edit your profile <br><div style="width: 80%; height: 0.3rem; background-color: #4CA6A7; " ></div></h1>
+            </div>
+            
+            <div class="lx-row align-stretch">
+              <div class="lx-column column-user-pic">
+                <div class="profile-pic bs-md">
+                  <h1 class="pic-label">Profile picture</h1>
+                  <div class="pic bs-md">
+                    
+                    <img src="{{user.profile.profile_image.url}}" class="rounded float-right" height="300px" width="300px">
+                      
+                  </div>
+                  <div class="pic-info">
+                    <p><i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;This photo will appear on the platform, in your contributions or where it is mentioned.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="lx-column">
+                <form action="" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <!-- {% if status %}
+                      <div class="alert alert-primary">{{status}}</div>
+                  {% endif %} -->
+                  <div class="fieldset">
+                    <label for="user-name">Name</label>
+                    <div class="input-wrapper">
+                      <span class="icon"><i class="fas fa-user"></i></span>
+                      <input type="text" id="user-name" value="{{user.data.name}}" autocomplete="username" name="name" required>
+                    </div>
+                    <div id="user-name-helper" class="helper">
+                      <p>Your name can appear on the platform, in your contributions or where it is mentioned.</p>
+                    </div>
+                  </div>
+                  <div class="fieldset">
+                    <label for="email">E-mail</label>
+                    <div class="input-wrapper">
+                      <span class="icon"><i class="fas fa-envelope"></i></span>
+                      <input type="email" id="email" value="{{user.email}}" autocomplete="username" name="email">
+                    </div>
+                    <div id="email-helper" class="helper"></div>
+                  </div>
+                  
+                  <div class="fieldset">
+                    <label for="dept">Department</label>
+                    <div class="input-wrapper">
+                      <span class="icon"><i class="fas fa-solid fa-building"></i></span>
+                      <input type="text" id="dept" value="{{user.data.department}}" name="department" required>
+                    </div>
+                    <div id="user-id-helper" class="helper"></div>
+                  </div>
+                  <div class="fieldset">
+                    <label for="contact">Contact</label>
+                    <div class="input-wrapper">
+                      <span class="icon"><i class="fas fa-solid fa-phone"></i></span>
+                      <input type="text" id="contact" value="{{user.data.contact_number}}" name="contact" required>
+                    </div>
+                    <div id="user-id-helper" class="helper"></div>
+                  </div>
+                 
+                  <!-- <div class="fieldset">
+                    <label for="pass">Password</label>
+                    <div class="input-wrapper">
+                      <span class="icon"><i class="fas fa-key"></i></span>
+                      <input type="password" id="pass" value="pass123*" autocomplete="current-password">
+                    </div> -->
+                    <!-- <div id="pass-helper" class="helper"></div>
+                  </div> -->
+                  <div class="fieldset">
+                    <label for="image">Proile Picture</label>
+                    <div class="input-wrapper">
+                      <span class="icon"><i class="fas fa-image"></i></span>
+                      <input type="file" id="profile_pic" autocomplete="profile-picture" name="profile">
+                    </div>
+                    <div id="email-helper" class="helper"></div>
+                  </div>
+                  <div class="actions">
+                    <a id="cancel" class="lx-btn" href="/"><i class="fas fa-ban"></i>&nbsp;&nbsp;Logout</a>
+                    
+                    <!-- <a type="button" id="save" class="lx-btn"><i class="fas fa-save"></i>&nbsp;&nbsp;Save</a> -->
+                    <button type="submit" value="Save Changes" id="save" class="lx-btn" type="submit">&nbsp;&nbsp;Save Changes</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      
+      <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" defer crossorigin="anonymous" data-search-pseudo-elements></script>
+    
+</body>
+</html>

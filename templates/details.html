@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/iconn.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Society Dashboard - Member Details</title>
+</head>
+<body>
+    <div class="container mt-5">
+    <h1>Members' List</h1>
+    <table class="table table-striped" style="box-shadow: 5px 5px 20px -5px #333 !important;">
+        <thead style="background-color: #4CA6A7; color: white; font-weight: lighter ;font-size: 1.2rem;" >
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Domain</th>
+            <th scope="col">Department</th>
+            <th scope="col">Year</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Last login</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for mem in member %}
+          <tr>
+            <th scope="row">{{mem.id}}</th>
+            <td>{{mem.name}}</td>
+            <td>{{mem.domain}}</td>
+            <td>{{mem.department}}</td>
+            <td>{{mem.year}}</td>
+            <td>{{mem.contact_number}}</td>
+            <td>{{mem.email}}</td>
+            <td>{{mem.updated_on}}</td>
+          </tr>
+          {% endfor %}
+          {% comment %} <tr>
+            <th scope="row">2</th>
+            <td>Mark Khan</td>
+            <td>CIS</td>
+            <td>TE</td>
+            <td>0346-3883524</td>
+            <td>kyumna14@gmail.com</td>
+            <td>30'Dec'2020 12:00</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Mark Khan</td>
+            <td>CIS</td>
+            <td>TE</td>
+            <td>0346-3883524</td>
+            <td>kyumna14@gmail.com</td>
+            <td>30'Dec'2020 12:00</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Mark Khan</td>
+            <td>CIS</td>
+            <td>TE</td>
+            <td>0346-3883524</td>
+            <td>kyumna14@gmail.com</td>
+            <td>30'Dec'2020 12:00</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Mark Khan</td>
+            <td>CIS</td>
+            <td>TE</td>
+            <td>0346-3883524</td>
+            <td>kyumna14@gmail.com</td>
+            <td>30'Dec'2020 12:00</td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>Mark Khan</td>
+            <td>CIS</td>
+            <td>TE</td>
+            <td>0346-3883524</td>
+            <td>kyumna14@gmail.com</td>
+            <td>30'Dec'2020 12:00</td>
+          </tr>
+          <tr>
+            <th scope="row">7</th>
+            <td>Mark Khan</td>
+            <td>CIS</td>
+            <td>TE</td>
+            <td>0346-3883524</td>
+            <td>kyumna14@gmail.com</td>
+            <td>30'Dec'2020 12:00</td>
+          </tr>
+          <tr>
+            <th scope="row">8</th>
+            <td>Mark Khan</td>
+            <td>CIS</td>
+            <td>TE</td>
+            <td>0346-3883524</td>
+            <td>kyumna14@gmail.com</td>
+            <td>30'Dec'2020 12:00</td>
+          </tr>
+          <tr>
+            <th scope="row">9</th>
+            <td>Mark Khan</td>
+            <td>CIS</td>
+            <td>TE</td>
+            <td>0346-3883524</td>
+            <td>kyumna14@gmail.com</td>
+            <td>30'Dec'2020 12:00</td>
+          </tr>
+          <tr>
+            <th scope="row">10</th>
+            <td>Mark Khan</td>
+            <td>CIS</td>
+            <td>TE</td>
+            <td>0346-3883524</td>
+            <td>kyumna14@gmail.com</td>
+            <td>30'Dec'2020 12:00</td>
+          </tr>
+          <tr>
+            <th scope="row">11</th>
+            <td>Mark Khan</td>
+            <td>CIS</td>
+            <td>TE</td>
+            <td>0346-3883524</td>
+            <td>kyumna14@gmail.com</td>
+            <td>30'Dec'2020 12:00</td>
+          </tr>
+          <tr>
+            <th scope="row">12</th>
+            <td>Mark Khan</td>
+            <td>CIS</td>
+            <td>TE</td>
+            <td>0346-3883524</td>
+            <td>kyumna14@gmail.com</td>
+            <td>30'Dec'2020 12:00</td>
+          </tr> {% endcomment %}
+          
+        </tbody>
+      </table></div>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/iconn.ico" />
+    <link rel="stylesheet" href="/static/addMinutes.css">
+
+    <title>Society Dashboard - Add Meeting Minutes</title>
+</head>
+<body>
+    <h1>Add Meeting Minutes</h1>
+    <div style="width: 15%; height: 0.3rem; background-color: #4CA6A7; margin-left: 38.6rem; margin-bottom: 3rem;"></div>
+    <div class='bold-line'></div>
+            <div class='container'>
+                <div class='window'>
+                    <div class='overlay'></div>
+                    <div class='content'>
+                        <div class='welcome'>Hello There!</div>
+                        <div class='subtitle'>You can add meeting minutes here...</div>
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            {% if status %}
+                            <div class="alert alert-primary">{{status}}</div>
+                            {% endif %}
+                            <div class='input-fields'>
+                                <input type='text' name="date" placeholder='Date' class='input-line full-width'></input>
+                                <input type='text' name="time" placeholder='Time' class='input-line full-width'></input>
+                                <input type='text' name="location" placeholder='Location' class='input-line full-width'></input>
+                                <input type='text' name="members" placeholder='Attendees seperated by commas' class='input-line full-width'></input>
+                                <input type='text' name="agenda" placeholder='Agenda items seperated by commas' class='input-line full-width'></input>
+                                <input type='text' name="decision" placeholder='Decisions taken seperated by commas' class='input-line full-width'></input>
+                            </div>                          
+                            <div><button type="submit" class='ghost-round full-width'>Schedule A Meeting</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    
+</body>
+</html>

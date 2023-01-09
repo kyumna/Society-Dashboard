@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/iconn.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Society Dashboard - Login</title>
+    <link rel="stylesheet" href="/static/login.css">
+</head>
+<body>
+    <section>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="box">
+          <div class="square" style="--i:0;"></div>
+          <div class="square" style="--i:1;"></div>
+          <div class="square" style="--i:2;"></div>
+          <div class="square" style="--i:3;"></div>
+          <div class="square" style="--i:4;"></div>
+          <div class="square" style="--i:5;"></div>
+          <div class="container">
+            <div class="form">
+              {% if msg %}
+              <h2>{{ msg | safe }}</h2>
+          {% else %}
+              <h2>Login</h2>
+          {% endif %}
+              
+              <!-- <div class="loginas">
+                <div class="a1 button-border" id="1" onclick="change(this.id)">Executive </div>
+                <div class="a1" id="2"onclick="change(this.id)">Director</div>
+                <div class="a1" id="3" onclick="change(this.id)">Member</div>
+              </div> -->
+              <form method="POST"  >
+                  {% csrf_token %}
+                <div class="inputBox">
+                  <label for="username" class="sr-only"></label>
+                  <input type="text" id="inputEmail" name="username" class="form-control" placeholder="Username" required
+                      autofocus>
+                  <label for="username" class="sr-only"></label>
+                  <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+                  <!-- <input type="text" placeholder="Username" name="username">
+                  <input type="password" placeholder="Password" name="password"> -->
+                  <button  value="Log In" class="b" type="submit">LogIn</button>
+                </div>
+              </form>
+    
+            </div>
+          </div>
+        </div>
+      </section>
+</body>
+<script>
+  {% comment %} function change(e){
+    var removing =document.getElementsByClassName('button-border')
+    removing[0].classList.remove('button-border')
+    var changing=document.getElementById(e)
+    changing.classList.add('button-border')
+
+
+  } {% endcomment %}
+</script>
+</html>

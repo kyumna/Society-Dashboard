@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/minutes page.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/iconn.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Society Dashboard - Meeting Minutes</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="margin-bottom: 1rem;">Meeting Minutes</h1>
+       
+        <div class="page">
+          
+            <div class="header">
+                <img src="/static/undraw_pending_approval_xuu9.png" />
+    
+                    <div class="chotu">
+                        <span><i class="fa-solid u fa-calendar-days"></i>{{meet.date}}</span>
+                        <span><i class="fa-solid u fa-clock"></i>{{meet.time}}</span>
+                        <span><i class="fa-solid u fa-location-dot"></i>{{meet.location}}</span>
+
+                    </div>
+               
+            </div>
+            <h2 class="headd">Minutes Of Team Meeting - {{meet.date}}</h2>
+            <div class="attendees">
+                <div class="head">
+                    <h2>Attendees</h2></div>
+                <div class="modal-body">
+                    <ul>
+                      <li>
+                        <p><i class="fa-solid u fa-user"></i>{{meet.members}}</p>
+                      </li>
+                      {% comment %} <li>
+                      </li>
+                      <li>
+                        <p><i class="fa-solid u fa-user"></i>Ifra Binty, Director Technology</p>
+                      </li>
+                      
+                      <li>
+                        <p><i class="fa-solid u fa-user"></i>Rayyan Khan, Co-director Technical</p>
+                      </li>
+                      <li>
+                        <p><i class="fa-solid u fa-user"></i>Ali, Member Technical</p>
+                      </li> {% endcomment %}
+                    </ul>
+                  </div>
+            </div>
+            <div class="agenda">
+                <div class="head">
+                <h2>Agenda Items</h2></div>
+                <div class="modal-body">
+                    <ul>
+                      <li>
+                        <p><i class="fa-solid u fa-paperclip"></i>{{meet.agenda}}</p>
+                      
+                        
+                      </li>
+                      {% comment %} <li>
+                        <p><i class="fa-solid u fa-paperclip"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, ipsum?</p>
+                      
+                        
+                      </li>
+                      <li>
+                        <p><i class="fa-solid u fa-paperclip"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, ipsum?</p>
+                      
+                        
+                      </li>
+                      <li>
+                        <p><i class="fa-solid u fa-paperclip"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, ipsum?</p>
+                      </li>{% endcomment %}
+                    </ul>
+                  </div> 
+            </div>
+            <div class="Decisions">
+                <div class="head">
+                    <h2>Decisions Taken</h2></div>
+
+                <div class="modal-body">
+                    <ul>
+                      <li>
+                        <p><i class="fa-solid u fa-map-pin"></i>{{meet.decision}}</p>
+                      
+                        
+                      </li>
+                      {% comment %} <li>
+                        <p><i class="fa-solid u fa-map-pin"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, ipsum?</p>
+                      
+                        
+                      </li>
+                      <li>
+                        <p><i class="fa-solid u fa-map-pin"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, ipsum?</p>
+                      
+                        
+                      </li>
+                      <li>
+                        <p><i class="fa-solid u fa-map-pin"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, ipsum?</p>
+                      </li> {% endcomment %}
+                    </ul>
+                  </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

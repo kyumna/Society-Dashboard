@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/iconn.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Montserrat&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/executive.css">
+    <title>Executive Member Portal</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>D</h1>
+            <div class="options">
+                <a href="#"><i title="Home"class="fa-sharp  fa-xl fa-yy fa-solid fa-house colors"id='1' onclick="coloring(this.id)"></i></a>
+                <a href="/schedule"><i title="Schedule Meeting" class="fa-solid   fa-xl fa-yy fa-calendar-days" id="2" onclick="coloring(this.id)"></i></a>
+                <i title="Add meeting minutes" class="fa-solid  fa-xl fa-yy fa-plus" id="3" onclick="coloring(this.id)"></i>
+                <i title="Automation"class="fa-solid  fa-xl fa-yy fa-wand-sparkles" id="4" onclick="coloring(this.id)"></i>
+                <a href="/meeting"><i title="View Meeting Minutes" class="fa-solid fa-xl fa-yy fa-eye" id="6" onclick="coloring(this.id)"></i></a>
+                <a href="/member_details"><i title="View member details" class="fa-solid  fa-xl  fa-yy fa-users-viewfinder" id="5" onclick="coloring(this.id)"></i></a>
+            </div>
+            <a href="/edit" target="_blank">
+            <img class="round" src="/static/profile.webp" alt=""></a>
+        </div>
+        <div class="middle">
+            <h1 >Hello, {{user.name}}</h1>
+            <div style="width: 20%; height: 0.3rem; background-color: #4CA6A7;" ></div>
+            <div class="boxes">
+
+                <div class="box">
+                    <i class="fa-solid yy fa-xl fa-calendar-days"></i>
+                    <p class="yyy" id="tenure">Tenure</p>
+                    <h2>22 - 23</h2>
+
+
+                </div>
+                <div class="box">
+                    <i class="fa-solid yy fa-xl fa-circle"></i>
+                    <p class="yyy" >Domains</p>
+                    <h2 style="margin-top: 1rem;" id="domain">06</h2>
+
+
+                </div>
+                <div class="box">
+                    <i class="fa-solid yy fa-xl fa-user"></i>
+                    <p class="yyy" id="member">Members</p>
+                    <h2 style="margin-top: 1rem;">120</h2>
+
+                </div>
+                <div class="box">
+                    <i class="fa-solid yy fa-xl  fa-diagram-project"></i>
+
+                    <p class="yyy" id="project">Projects</p>
+                    <h2 style="margin-top: 1rem;">03</h2>
+
+                </div>
+            </div>
+            <div class="boxes1">
+
+                <div class="box1">
+                    <a href="/schedule">
+                        <div>
+                            <i style="color: white;" class="fa-solid fa-xl yyyy fa-calendar-days"></i>
+                            <h2 class="headd">Schedule A Meeting...</h2>
+                            <p>Schedule your upcoming meetings here!!</p>
+                        </div>
+                    </a>
+                   
+
+                </div>
+                <div class="box1">
+                    <a href="/add_minutes"> 
+                        <div>
+                            <i style="color: white;" class="fa-solid fa-xl yyyy fa-plus"></i>
+                            <h2 class="headd">Add Meeting Minutes...</h2>
+                            <p>Add your past meeting minutes here!!</p>
+        
+                        </div>
+                    </a>
+                   
+                </div>
+                <div class="box1">
+                    <a href="/member_details">
+                        <div>
+                            <i style="color: white;" class="fa-solid fa-xl yyyy fa-users-viewfinder"></i>
+                            <h2 class="headd">View Member Details...</h2>
+                            <p>View details of members of your society here!!</p>
+                        </div>
+                    </a>
+                   
+
+                </div>
+                <div class="box1" style="background-color: #178083 ; width: 100%;">
+                    <a href="#">
+                        <div>
+                            <i style="text-align: left; color: white;" class="fa-solid fa-xl yyyy fa-wand-sparkles"></i>
+                            <h2 class="headd">Start Automation...</h2>
+                            <p>Start Automation Now!!</p>
+                        </div>
+                    </a>
+                   
+
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <h2>Your Upcoming Meetings</h2>
+            {% comment %} <div class="chotu">
+                <span><i class="fa-solid u fa-calendar-days"></i> 22'August'2022</span>
+                <span><i class="fa-solid u fa-clock"></i>9:20 A.M.</span>
+                <span><i class="fa-solid u fa-location-dot"></i>Cis Garden</span>
+
+            </div> {% endcomment %}
+          {% for schedule in sche %}
+            
+            <div class="chotu">
+                <span><i class="fa-solid u fa-calendar-days"></i>{{schedule.date}}</span>
+                <span><i class="fa-solid u fa-clock"></i>{{schedule.time}}</span>
+                <span><i class="fa-solid u fa-location-dot"></i>{{schedule.location}}</span>
+                
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+<script>
+    function coloring(e){
+        var removing=document.getElementsByClassName('colors')
+        removing[0].classList.remove('colors')
+        var ele=document.getElementById(e)
+        ele.classList.add('colors')
+
+    }
+   
+    
+   
+</script>
+
+</html>

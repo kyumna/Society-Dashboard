@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/iconn.ico" />
+    <link rel="stylesheet" href="/static/meeting.css">
+    <title>Society Dashboard - Schedule Meetings</title>
+</head>
+
+<body>
+    <div class="containerr">
+        <h1 class="head">Schedule A Meeting</h1>
+        <div style="width: 15%; height: 0.3rem; background-color: #4CA6A7; margin-left: 39.6rem; margin-bottom: 5rem;"></div>
+
+        <div class="main">
+            <div class='bold-line'></div>
+            <div class='container'>
+                <div class='window'>
+                    <div class='overlay'></div>
+                    <div class='content'>
+                        <div class='welcome'>Hello There!</div>
+                        <div class='subtitle'>You can Schedule your upcoming meetings here.</div>
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            {% if status %}
+                            <div class="alert alert-primary">{{status}}</div>
+                            {% endif %}
+                            <div class='input-fields'>
+
+                                <input name="date" type='text' placeholder='Date' class='input-line full-width'></input>
+                                <input name="time" type='text' placeholder='Time' class='input-line full-width'></input>
+                                <input type='text' name="location" placeholder='Location' class='input-line full-width'></input>
+                                
+                            </div>
+                            
+                            <div><button type="submit" class='ghost-round full-width'>Schedule A Meeting</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
